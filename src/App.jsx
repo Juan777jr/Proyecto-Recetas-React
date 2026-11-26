@@ -12,6 +12,7 @@ import RecipeDetailPage from './pages/RecipeDetailPage';
 import AddRecipePage from './pages/AddRecipePage';
 import NotFoundPage from './pages/NotFoundPage';
 import { getRecipeById } from './services/recipesApi';
+import EditRecipePage from './pages/EditRecipePage';
 
 const PlaceholderPage = ({ title, description }) => (
   <section className="mx-auto max-w-4xl px-4 py-16 text-center">
@@ -56,6 +57,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <MainLayout />,
     children: [
+      {
+        path: 'edit-recipe/:id',
+        element: <EditRecipePage />,
+        loader: ({ params }) => getRecipeById(params.id),
+        errorElement: <RecipeErrorElement />,
+      },
       {
         index: true,
         element: <HomePage />,

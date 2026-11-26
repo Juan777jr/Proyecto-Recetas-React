@@ -1,45 +1,6 @@
 {
   "recipes": [
     {
-      "id": "1",
-      "title": "Arepas de choclo con queso",
-      "category": "Desayuno",
-      "difficulty": "Fácil",
-      "prepTime": 25,
-      "servings": 4,
-      "description": "Arepas suaves de maíz tierno recién molido con queso campesino fundido en la sartén.",
-      "ingredients": [
-        {
-          "name": "Maíz tierno desgranado",
-          "quantity": "3 tazas"
-        },
-        {
-          "name": "Queso campesino rallado",
-          "quantity": "200 g"
-        },
-        {
-          "name": "Leche entera",
-          "quantity": "1/4 taza"
-        },
-        {
-          "name": "Mantequilla",
-          "quantity": "1 cucharada"
-        }
-      ],
-      "steps": [
-        "Licúa el maíz tierno con la leche hasta lograr una mezcla espesa.",
-        "Mezcla en un bowl con el queso rallado y una pizca de sal.",
-        "Dora porciones en una sartén con mantequilla unos 4 minutos por lado."
-      ],
-      "favorite": false,
-      "createdAt": "2026-11-15T07:30:00.000Z",
-      "author": {
-        "name": "Camila Restrepo",
-        "bio": "Apasionada por los desayunos tradicionales colombianos.",
-        "email": "camila.restrepo@example.com"
-      }
-    },
-    {
       "id": "2",
       "title": "Caldo de costilla criollo",
       "category": "Desayuno",
@@ -280,7 +241,7 @@
       "difficulty": "Fácil",
       "prepTime": 10,
       "servings": 4,
-      "description": "Bebida refrescante cítrica y cremosa ideal para tardes calurosas.",
+      "description": "Bebida refrescante",
       "ingredients": [
         {
           "name": "Jugo de limón natural",
@@ -308,8 +269,8 @@
       "createdAt": "2026-11-22T15:00:00.000Z",
       "author": {
         "name": "Sebastián Rojas",
-        "bio": "Bebidas naturales y refrescantes.",
-        "email": "sebastian.rojas@example.com"
+        "email": "sebastian.rojas@example.com",
+        "bio": "Bebidas naturales y refrescantes."
       }
     }
   ],
