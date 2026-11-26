@@ -3,10 +3,16 @@ import RecipeCard from '../components/RecipeCard';
 import Spinner from '../components/Spinner';
 import { getRecipes } from '../services/recipesApi';
 
+const CATEGORIES = ['Desayuno', 'Almuerzo', 'Cena', 'Postre', 'Bebida'];
+const DIFFICULTIES = ['Fácil', 'Media', 'Difícil'];
+
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('Todas');
+  const [difficulty, setDifficulty] = useState('Todas');
 
   useEffect(() => {
     let active = true;
@@ -37,6 +43,24 @@ const RecipesPage = () => {
     };
   }, []);
 
+  const normalizedSearch = search.trim().toLowerCase();
+
+  const filteredRecipes = recipes.filter((recipe) => {
+    const matchesTitle = recipe.title.toLowerCase().includes(normalizedSearch);
+    const matchesCategory =
+      category === 'Todas' || recipe.category === category;
+    const matchesDifficulty =
+      difficulty === 'Todas' || recipe.difficulty === difficulty;
+
+    return matchesTitle && matchesCategory && matchesDifficulty;
+  });
+
+  const handleClearFilters = () => {
+    setSearch('');
+    setCategory('Todas');
+    setDifficulty('Todas');
+  };
+
   return (
     <>
       <title>Todas las recetas | CookBook</title>
@@ -46,7 +70,7 @@ const RecipesPage = () => {
             Explorar recetas
           </h1>
           <p className="mt-1 text-stone-600">
-            Revisa todas las preparaciones disponibles en el recetario.
+            Busca por nombre o combina filtros de categoría y dificultad.
           </p>
         </div>
 
@@ -61,18 +85,113 @@ const RecipesPage = () => {
           </div>
         )}
 
-        {!loading && !error && recipes.length === 0 && (
-          <p className="text-stone-600">
-            No hay recetas registradas en este momento.
-          </p>
-        )}
+        {!loading && !error && (
+          <>
 
-        {!loading && !error && recipes.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
+            <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+              <div>
+                <label
+                  htmlFor="search-recipe"
+                  className="block text-xs font-semibold uppercase tracking-wide text-stone-700 mb-1"
+                >
+                  Buscar por título
+                </label>
+                <input
+                  id="search-recipe"
+                  type="search"
+                  placeholder="Ej: Arepas, Brownie..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="filter-category"
+                  className="block text-xs font-semibold uppercase tracking-wide text-stone-700 mb-1"
+                >
+                  Categoría
+                </label>
+                <select
+                  id="filter-category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="Todas">Todas las categorías</option>
+                  {CATEGORIES.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="filter-difficulty"
+                  className="block text-xs font-semibold uppercase tracking-wide text-stone-700 mb-1"
+                >
+                  Dificultad
+                </label>
+                <select
+                  id="filter-difficulty"
+                  value={difficulty}
+                  onChange={(e) => setDifficulty(e.target.value)}
+                  className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="Todas">Todas las dificultades</option>
+                  {DIFFICULTIES.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  onClick={handleClearFilters}
+                  className="w-full border border-stone-300 hover:bg-stone-100 text-stone-700 font-semibold py-2 px-4 rounded-lg text-sm transition cursor-pointer"
+                >
+                  Limpiar filtros
+                </button>
+              </div>
+            </div>
+            <p className="mb-5 text-sm text-stone-600">
+              Mostrando{' '}
+              <span className="font-semibold text-stone-900">
+                {filteredRecipes.length}
+              </span>{' '}
+              de{' '}
+              <span className="font-semibold text-stone-900">
+                {recipes.length}
+              </span>{' '}
+              recetas
+            </p>
+            {filteredRecipes.length === 0 ? (
+              <div className="bg-white border border-stone-200 rounded-xl p-8 text-center">
+                <p className="text-stone-700 font-medium mb-3">
+                  No encontramos recetas que coincidan con tu búsqueda o filtros.
+                </p>
+                <button
+                  type="button"
+                  onClick={handleClearFilters}
+                  className="bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition cursor-pointer"
+                >
+                  Ver todas las recetas
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredRecipes.map((recipe) => (
+                  <RecipeCard key={recipe.id} recipe={recipe} />
+                ))}
+              </div>
+            )}
+          </>
         )}
       </section>
     </>
