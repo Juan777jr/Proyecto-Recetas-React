@@ -5,16 +5,38 @@ import {
   FaArrowLeft,
   FaClock,
   FaEdit,
+  FaHeart,
+  FaRegHeart,
   FaTrash,
   FaUser,
   FaUsers,
 } from 'react-icons/fa';
-import { deleteRecipe } from '../services/recipesApi';
+import { deleteRecipe, toggleFavoriteRecipe } from '../services/recipesApi';
 
 const RecipeDetailPage = () => {
   const recipe = useLoaderData();
   const navigate = useNavigate();
   const [deleting, setDeleting] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(Boolean(recipe.favorite));
+  const [togglingFav, setTogglingFav] = useState(false);
+
+  const handleToggleFavorite = async () => {
+    const nextFavorite = !isFavorite;
+    try {
+      setTogglingFav(true);
+      await toggleFavoriteRecipe(recipe.id, nextFavorite);
+      setIsFavorite(nextFavorite);
+      toast.success(
+        nextFavorite
+          ? 'Agregada a recetas favoritas'
+          : 'Eliminada de recetas favoritas'
+      );
+    } catch (error) {
+      toast.error(error.message || 'No se pudo actualizar favorita');
+    } finally {
+      setTogglingFav(false);
+    }
+  };
 
   const handleDelete = async () => {
     const confirmed = window.confirm(
@@ -60,7 +82,27 @@ const RecipeDetailPage = () => {
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={handleToggleFavorite}
+                disabled={togglingFav}
+                aria-label={
+                  isFavorite
+                    ? 'Quitar receta de favoritas'
+                    : 'Marcar receta como favorita'
+                }
+                aria-pressed={isFavorite}
+                className="inline-flex items-center gap-1.5 border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 text-sm font-semibold px-3.5 py-2 rounded-lg transition cursor-pointer disabled:opacity-50"
+              >
+                {isFavorite ? (
+                  <FaHeart aria-hidden="true" />
+                ) : (
+                  <FaRegHeart aria-hidden="true" />
+                )}
+                {isFavorite ? 'Favorita' : 'Marcar favorita'}
+              </button>
+
               <Link
                 to={`/edit-recipe/${recipe.id}`}
                 className="inline-flex items-center gap-1.5 bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold px-3.5 py-2 rounded-lg transition"
@@ -68,6 +110,7 @@ const RecipeDetailPage = () => {
                 <FaEdit aria-hidden="true" />
                 Editar
               </Link>
+
               <button
                 type="button"
                 onClick={handleDelete}
@@ -129,7 +172,10 @@ const RecipeDetailPage = () => {
               </h2>
               <ol className="list-decimal list-inside space-y-3 text-stone-700">
                 {recipe.steps.map((step, idx) => (
-                  <li key={`${idx}-${step.slice(0, 12)}`} className="leading-relaxed">
+                  <li
+                    key={`${idx}-${step.slice(0, 12)}`}
+                    className="leading-relaxed"
+                  >
                     {step}
                   </li>
                 ))}

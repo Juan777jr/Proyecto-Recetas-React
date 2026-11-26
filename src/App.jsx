@@ -10,22 +10,10 @@ import HomePage from './pages/HomePage';
 import RecipesPage from './pages/RecipesPage';
 import RecipeDetailPage from './pages/RecipeDetailPage';
 import AddRecipePage from './pages/AddRecipePage';
+import EditRecipePage from './pages/EditRecipePage';
+import FavoritesPage from './pages/FavoritesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { getRecipeById } from './services/recipesApi';
-import EditRecipePage from './pages/EditRecipePage';
-
-const PlaceholderPage = ({ title, description }) => (
-  <section className="mx-auto max-w-4xl px-4 py-16 text-center">
-    <h1 className="text-3xl font-bold text-stone-900 mb-3">{title}</h1>
-    <p className="text-stone-600 mb-6">{description}</p>
-    <Link
-      to="/recipes"
-      className="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-2.5 rounded-lg transition"
-    >
-      Ir a recetas
-    </Link>
-  </section>
-);
 
 const RecipeErrorElement = () => {
   const error = useRouteError();
@@ -58,12 +46,6 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: 'edit-recipe/:id',
-        element: <EditRecipePage />,
-        loader: ({ params }) => getRecipeById(params.id),
-        errorElement: <RecipeErrorElement />,
-      },
-      {
         index: true,
         element: <HomePage />,
       },
@@ -83,21 +65,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'edit-recipe/:id',
-        element: (
-          <PlaceholderPage
-            title="Editar receta"
-            description="La edición precargada se implementará enseguida."
-          />
-        ),
+        element: <EditRecipePage />,
+        loader: ({ params }) => getRecipeById(params.id),
+        errorElement: <RecipeErrorElement />,
       },
       {
         path: 'favorites',
-        element: (
-          <PlaceholderPage
-            title="Recetas favoritas"
-            description="Esta sección se completará en la Sesión 3."
-          />
-        ),
+        element: <FavoritesPage />,
       },
       {
         path: '*',

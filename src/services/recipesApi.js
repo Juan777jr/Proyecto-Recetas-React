@@ -66,6 +66,20 @@ export async function updateRecipe(id, updatedRecipe) {
   return response.json();
 }
 
+export async function toggleFavoriteRecipe(id, favorite) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ favorite }),
+  });
+
+  if (!response.ok) {
+    throw new Error('No se pudo actualizar el estado de favorita');
+  }
+
+  return response.json();
+}
+
 export async function deleteRecipe(id) {
   const response = await fetch(`${API_URL}/${id}`, {
     method: 'DELETE',

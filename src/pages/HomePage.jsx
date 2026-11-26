@@ -40,6 +40,12 @@ const HomePage = () => {
     };
   }, []);
 
+  const handleToggleFavorite = (updatedRecipe) => {
+    setLatestRecipes((prev) =>
+      prev.map((item) => (item.id === updatedRecipe.id ? updatedRecipe : item))
+    );
+  };
+
   return (
     <>
       <title>Inicio | CookBook</title>
@@ -49,7 +55,6 @@ const HomePage = () => {
         subtitle="Explora preparaciones recientes, filtra por categoría o publica tu propia receta."
       />
 
-      {/* Dos tarjetas de acción con Card reutilizable */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card bg="bg-white">
@@ -86,7 +91,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 3 últimas recetas */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
           <h2 className="text-2xl font-bold text-stone-900">
@@ -120,7 +124,11 @@ const HomePage = () => {
         {!loading && !error && latestRecipes.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {latestRecipes.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                onToggleFavorite={handleToggleFavorite}
+              />
             ))}
           </div>
         )}

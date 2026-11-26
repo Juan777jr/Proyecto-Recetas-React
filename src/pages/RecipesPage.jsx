@@ -43,6 +43,12 @@ const RecipesPage = () => {
     };
   }, []);
 
+  const handleToggleFavorite = (updatedRecipe) => {
+    setRecipes((prev) =>
+      prev.map((item) => (item.id === updatedRecipe.id ? updatedRecipe : item))
+    );
+  };
+
   const normalizedSearch = search.trim().toLowerCase();
 
   const filteredRecipes = recipes.filter((recipe) => {
@@ -87,7 +93,6 @@ const RecipesPage = () => {
 
         {!loading && !error && (
           <>
-
             <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
               <div>
                 <label
@@ -160,6 +165,7 @@ const RecipesPage = () => {
                 </button>
               </div>
             </div>
+
             <p className="mb-5 text-sm text-stone-600">
               Mostrando{' '}
               <span className="font-semibold text-stone-900">
@@ -171,6 +177,7 @@ const RecipesPage = () => {
               </span>{' '}
               recetas
             </p>
+
             {filteredRecipes.length === 0 ? (
               <div className="bg-white border border-stone-200 rounded-xl p-8 text-center">
                 <p className="text-stone-700 font-medium mb-3">
@@ -187,7 +194,11 @@ const RecipesPage = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredRecipes.map((recipe) => (
-                  <RecipeCard key={recipe.id} recipe={recipe} />
+                  <RecipeCard
+                    key={recipe.id}
+                    recipe={recipe}
+                    onToggleFavorite={handleToggleFavorite}
+                  />
                 ))}
               </div>
             )}

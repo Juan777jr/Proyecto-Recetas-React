@@ -31,7 +31,7 @@
         "Agrega las papas criollas y cocina hasta que espesen ligeramente el caldo.",
         "Sirve caliente con abundante cilantro picado."
       ],
-      "favorite": true,
+      "favorite": false,
       "createdAt": "2026-11-16T08:00:00.000Z",
       "author": {
         "name": "Andrés Mendoza",
@@ -70,7 +70,7 @@
         "Incorpora el caldo caliente, la papa y el arroz.",
         "Cocina a fuego medio revolviendo ocasionalmente hasta lograr textura cremosa."
       ],
-      "favorite": false,
+      "favorite": true,
       "createdAt": "2026-11-17T12:15:00.000Z",
       "author": {
         "name": "Valentina Ortiz",
@@ -109,7 +109,7 @@
         "Vierte la salsa de soya con un toque de miel o ajo y reduce hasta glasear.",
         "Sirve sobre arroz junto con el aguacate."
       ],
-      "favorite": false,
+      "favorite": true,
       "createdAt": "2026-11-18T13:00:00.000Z",
       "author": {
         "name": "Diego Castaño",
@@ -148,7 +148,7 @@
         "Cocina la carne y los trozos de piña en sartén bien caliente.",
         "Arma los tacos en tortillas calientes y corona con cebolla, cilantro y limón."
       ],
-      "favorite": true,
+      "favorite": false,
       "createdAt": "2026-11-19T19:20:00.000Z",
       "author": {
         "name": "Sofía Herrera",
@@ -187,7 +187,7 @@
         "Licúa hasta obtener una crema homogénea.",
         "Incorpora la crema de leche, ajusta la sal y sirve tibia."
       ],
-      "favorite": false,
+      "favorite": true,
       "createdAt": "2026-11-20T18:45:00.000Z",
       "author": {
         "name": "Mateo Vargas",
