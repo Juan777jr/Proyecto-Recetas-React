@@ -9,6 +9,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import RecipesPage from './pages/RecipesPage';
 import RecipeDetailPage from './pages/RecipeDetailPage';
+import AddRecipePage from './pages/AddRecipePage';
 import NotFoundPage from './pages/NotFoundPage';
 import { getRecipeById } from './services/recipesApi';
 
@@ -71,12 +72,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'add-recipe',
-        element: (
-          <PlaceholderPage
-            title="Nueva receta"
-            description="El formulario para crear recetas se implementará en el siguiente paso."
-          />
-        ),
+        element: <AddRecipePage />,
       },
       {
         path: 'edit-recipe/:id',

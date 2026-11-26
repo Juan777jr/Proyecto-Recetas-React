@@ -9,10 +9,22 @@
       "servings": 4,
       "description": "Arepas suaves de maíz tierno recién molido con queso campesino fundido en la sartén.",
       "ingredients": [
-        { "name": "Maíz tierno desgranado", "quantity": "3 tazas" },
-        { "name": "Queso campesino rallado", "quantity": "200 g" },
-        { "name": "Leche entera", "quantity": "1/4 taza" },
-        { "name": "Mantequilla", "quantity": "1 cucharada" }
+        {
+          "name": "Maíz tierno desgranado",
+          "quantity": "3 tazas"
+        },
+        {
+          "name": "Queso campesino rallado",
+          "quantity": "200 g"
+        },
+        {
+          "name": "Leche entera",
+          "quantity": "1/4 taza"
+        },
+        {
+          "name": "Mantequilla",
+          "quantity": "1 cucharada"
+        }
       ],
       "steps": [
         "Licúa el maíz tierno con la leche hasta lograr una mezcla espesa.",
@@ -36,10 +48,22 @@
       "servings": 4,
       "description": "Caldo reconfortante de costilla de res con papa criolla, cilantro fresco y cebolla larga.",
       "ingredients": [
-        { "name": "Costilla de res", "quantity": "600 g" },
-        { "name": "Papa criolla", "quantity": "8 unidades" },
-        { "name": "Cebolla larga picada", "quantity": "2 tallos" },
-        { "name": "Cilantro fresco", "quantity": "Al gusto" }
+        {
+          "name": "Costilla de res",
+          "quantity": "600 g"
+        },
+        {
+          "name": "Papa criolla",
+          "quantity": "8 unidades"
+        },
+        {
+          "name": "Cebolla larga picada",
+          "quantity": "2 tallos"
+        },
+        {
+          "name": "Cilantro fresco",
+          "quantity": "Al gusto"
+        }
       ],
       "steps": [
         "Cocina la costilla en agua con sal y cebolla larga hasta que esté tierna.",
@@ -63,10 +87,22 @@
       "servings": 6,
       "description": "Plato meloso y lleno de sabor con pollo, cerdo, verduras y especias suaves.",
       "ingredients": [
-        { "name": "Arroz blanco", "quantity": "2 tazas" },
-        { "name": "Pechuga y pernil de pollo", "quantity": "500 g" },
-        { "name": "Papa pastusa en cubos", "quantity": "2 unidades" },
-        { "name": "Hogao de tomate y cebolla", "quantity": "1 taza" }
+        {
+          "name": "Arroz blanco",
+          "quantity": "2 tazas"
+        },
+        {
+          "name": "Pechuga y pernil de pollo",
+          "quantity": "500 g"
+        },
+        {
+          "name": "Papa pastusa en cubos",
+          "quantity": "2 unidades"
+        },
+        {
+          "name": "Hogao de tomate y cebolla",
+          "quantity": "1 taza"
+        }
       ],
       "steps": [
         "Sofríe las carnes con el hogao y condimentos hasta dorar.",
@@ -90,10 +126,22 @@
       "servings": 3,
       "description": "Trozos de pollo glaseados acompañados de arroz jazmín, pepino y aguacate en rodajas.",
       "ingredients": [
-        { "name": "Pechuga de pollo en cubos", "quantity": "400 g" },
-        { "name": "Arroz cocido", "quantity": "2 tazas" },
-        { "name": "Salsa de soya", "quantity": "4 cucharadas" },
-        { "name": "Aguacate maduro", "quantity": "1 unidad" }
+        {
+          "name": "Pechuga de pollo en cubos",
+          "quantity": "400 g"
+        },
+        {
+          "name": "Arroz cocido",
+          "quantity": "2 tazas"
+        },
+        {
+          "name": "Salsa de soya",
+          "quantity": "4 cucharadas"
+        },
+        {
+          "name": "Aguacate maduro",
+          "quantity": "1 unidad"
+        }
       ],
       "steps": [
         "Dora el pollo en una sartén caliente hasta que esté bien cocido.",
@@ -117,10 +165,22 @@
       "servings": 4,
       "description": "Carne adobada con piña asada, cebolla, cilantro y limón en tortillas de maíz calientes.",
       "ingredients": [
-        { "name": "Lomo de cerdo en tiras", "quantity": "500 g" },
-        { "name": "Piña fresca en trozos", "quantity": "1 taza" },
-        { "name": "Tortillas de maíz", "quantity": "8 unidades" },
-        { "name": "Cebolla blanca y cilantro", "quantity": "Al gusto" }
+        {
+          "name": "Lomo de cerdo en tiras",
+          "quantity": "500 g"
+        },
+        {
+          "name": "Piña fresca en trozos",
+          "quantity": "1 taza"
+        },
+        {
+          "name": "Tortillas de maíz",
+          "quantity": "8 unidades"
+        },
+        {
+          "name": "Cebolla blanca y cilantro",
+          "quantity": "Al gusto"
+        }
       ],
       "steps": [
         "Marina la carne con especias, ajo y jugo de piña durante 20 minutos.",
@@ -144,10 +204,22 @@
       "servings": 4,
       "description": "Crema ligera y aterciopelada de calabaza con un toque aromático de jengibre fresco.",
       "ingredients": [
-        { "name": "Calabaza pelada en cubos", "quantity": "700 g" },
-        { "name": "Jengibre fresco rallado", "quantity": "1 cucharadita" },
-        { "name": "Caldo de verduras", "quantity": "3 tazas" },
-        { "name": "Crema de leche", "quantity": "1/3 taza" }
+        {
+          "name": "Calabaza pelada en cubos",
+          "quantity": "700 g"
+        },
+        {
+          "name": "Jengibre fresco rallado",
+          "quantity": "1 cucharadita"
+        },
+        {
+          "name": "Caldo de verduras",
+          "quantity": "3 tazas"
+        },
+        {
+          "name": "Crema de leche",
+          "quantity": "1/3 taza"
+        }
       ],
       "steps": [
         "Hierve la calabaza y el jengibre en el caldo hasta que estén suaves.",
@@ -171,10 +243,22 @@
       "servings": 8,
       "description": "Cuadros de chocolate intenso con centro suave y corteza ligeramente crocante.",
       "ingredients": [
-        { "name": "Chocolate semiamargo", "quantity": "200 g" },
-        { "name": "Mantequilla sin sal", "quantity": "120 g" },
-        { "name": "Huevos", "quantity": "3 unidades" },
-        { "name": "Harina de trigo", "quantity": "1/2 taza" }
+        {
+          "name": "Chocolate semiamargo",
+          "quantity": "200 g"
+        },
+        {
+          "name": "Mantequilla sin sal",
+          "quantity": "120 g"
+        },
+        {
+          "name": "Huevos",
+          "quantity": "3 unidades"
+        },
+        {
+          "name": "Harina de trigo",
+          "quantity": "1/2 taza"
+        }
       ],
       "steps": [
         "Derrite el chocolate con la mantequilla a baño María y deja entibiar.",
@@ -198,10 +282,22 @@
       "servings": 4,
       "description": "Bebida refrescante cítrica y cremosa ideal para tardes calurosas.",
       "ingredients": [
-        { "name": "Jugo de limón natural", "quantity": "1/2 taza" },
-        { "name": "Leche de coco", "quantity": "1 taza" },
-        { "name": "Hojas de hierbabuena", "quantity": "12 hojas" },
-        { "name": "Hielo al gusto", "quantity": "2 tazas" }
+        {
+          "name": "Jugo de limón natural",
+          "quantity": "1/2 taza"
+        },
+        {
+          "name": "Leche de coco",
+          "quantity": "1 taza"
+        },
+        {
+          "name": "Hojas de hierbabuena",
+          "quantity": "12 hojas"
+        },
+        {
+          "name": "Hielo al gusto",
+          "quantity": "2 tazas"
+        }
       ],
       "steps": [
         "Licúa brevemente el jugo de limón, la leche de coco y el hielo.",
@@ -216,5 +312,6 @@
         "email": "sebastian.rojas@example.com"
       }
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
