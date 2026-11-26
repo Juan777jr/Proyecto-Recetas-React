@@ -5,6 +5,7 @@ import { getRecipes } from '../services/recipesApi';
 
 const CATEGORIES = ['Desayuno', 'Almuerzo', 'Cena', 'Postre', 'Bebida'];
 const DIFFICULTIES = ['Fácil', 'Media', 'Difícil'];
+const PAGE_SIZE = 6;
 
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -13,6 +14,7 @@ const RecipesPage = () => {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('Todas');
   const [difficulty, setDifficulty] = useState('Todas');
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     let active = true;
@@ -61,10 +63,34 @@ const RecipesPage = () => {
     return matchesTitle && matchesCategory && matchesDifficulty;
   });
 
+  const totalPages = Math.max(1, Math.ceil(filteredRecipes.length / PAGE_SIZE));
+  const safePage = Math.min(currentPage, totalPages);
+  const startIndex = (safePage - 1) * PAGE_SIZE;
+  const paginatedRecipes = filteredRecipes.slice(
+    startIndex,
+    startIndex + PAGE_SIZE
+  );
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleDifficultyChange = (e) => {
+    setDifficulty(e.target.value);
+    setCurrentPage(1);
+  };
+
   const handleClearFilters = () => {
     setSearch('');
     setCategory('Todas');
     setDifficulty('Todas');
+    setCurrentPage(1);
   };
 
   return (
@@ -106,7 +132,7 @@ const RecipesPage = () => {
                   type="search"
                   placeholder="Ej: Arepas, Brownie..."
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={handleSearchChange}
                   className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
@@ -121,7 +147,7 @@ const RecipesPage = () => {
                 <select
                   id="filter-category"
                   value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  onChange={handleCategoryChange}
                   className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   <option value="Todas">Todas las categorías</option>
@@ -143,7 +169,7 @@ const RecipesPage = () => {
                 <select
                   id="filter-difficulty"
                   value={difficulty}
-                  onChange={(e) => setDifficulty(e.target.value)}
+                  onChange={handleDifficultyChange}
                   className="w-full border border-stone-300 rounded-lg px-3 py-2 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
                   <option value="Todas">Todas las dificultades</option>
@@ -169,13 +195,13 @@ const RecipesPage = () => {
             <p className="mb-5 text-sm text-stone-600">
               Mostrando{' '}
               <span className="font-semibold text-stone-900">
-                {filteredRecipes.length}
+                {paginatedRecipes.length}
               </span>{' '}
               de{' '}
               <span className="font-semibold text-stone-900">
-                {recipes.length}
+                {filteredRecipes.length}
               </span>{' '}
-              recetas
+              recetas filtradas ({recipes.length} en total)
             </p>
 
             {filteredRecipes.length === 0 ? (
@@ -192,15 +218,52 @@ const RecipesPage = () => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredRecipes.map((recipe) => (
-                  <RecipeCard
-                    key={recipe.id}
-                    recipe={recipe}
-                    onToggleFavorite={handleToggleFavorite}
-                  />
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {paginatedRecipes.map((recipe) => (
+                    <RecipeCard
+                      key={recipe.id}
+                      recipe={recipe}
+                      onToggleFavorite={handleToggleFavorite}
+                    />
+                  ))}
+                </div>
+
+                {totalPages > 1 && (
+                  <nav
+                    aria-label="Paginación de recetas"
+                    className="mt-8 flex flex-wrap items-center justify-center gap-4"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.max(1, prev - 1))
+                      }
+                      disabled={safePage === 1}
+                      className="border border-stone-300 bg-white hover:bg-stone-100 disabled:opacity-50 text-stone-800 font-semibold px-4 py-2 rounded-lg text-sm transition cursor-pointer"
+                    >
+                      Anterior
+                    </button>
+
+                    <span className="text-sm font-semibold text-stone-700">
+                      Página {safePage} de {totalPages}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setCurrentPage((prev) =>
+                          Math.min(totalPages, prev + 1)
+                        )
+                      }
+                      disabled={safePage === totalPages}
+                      className="border border-stone-300 bg-white hover:bg-stone-100 disabled:opacity-50 text-stone-800 font-semibold px-4 py-2 rounded-lg text-sm transition cursor-pointer"
+                    >
+                      Siguiente
+                    </button>
+                  </nav>
+                )}
+              </>
             )}
           </>
         )}

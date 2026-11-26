@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { FaArrowLeft } from 'react-icons/fa';
+import Input from '../components/Input';
 import { createRecipe } from '../services/recipesApi';
 
 const CATEGORIES = ['Desayuno', 'Almuerzo', 'Cena', 'Postre', 'Bebida'];
@@ -33,6 +34,7 @@ const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
 const AddRecipePage = () => {
   const navigate = useNavigate();
+  const titleInputRef = useRef(null);
 
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Desayuno');
@@ -72,7 +74,11 @@ const AddRecipePage = () => {
       nextErrors.prepTime = 'El tiempo debe ser un número entero mayor a 0.';
     }
 
-    if (!Number.isInteger(parsedServings) || parsedServings < 1 || parsedServings > 20) {
+    if (
+      !Number.isInteger(parsedServings) ||
+      parsedServings < 1 ||
+      parsedServings > 20
+    ) {
       nextErrors.servings = 'Las porciones deben ser un entero entre 1 y 20.';
     }
 
@@ -121,6 +127,9 @@ const AddRecipePage = () => {
 
     if (!isValid) {
       setErrors(nextErrors);
+      if (nextErrors.title && titleInputRef.current) {
+        titleInputRef.current.focus();
+      }
       toast.error('Revisa los campos marcados antes de guardar.');
       return;
     }
@@ -183,28 +192,16 @@ const AddRecipePage = () => {
             </p>
           </div>
 
-          <div>
-            <label
-              htmlFor="title"
-              className="block text-sm font-semibold text-stone-800 mb-1"
-            >
-              Título de la receta
-            </label>
-            <input
-              id="title"
-              name="title"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Ej: Empanadas de carne caseras"
-              className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
-            />
-            {errors.title && (
-              <p className="mt-1 text-xs font-medium text-red-600">
-                {errors.title}
-              </p>
-            )}
-          </div>
+          <Input
+            ref={titleInputRef}
+            id="title"
+            name="title"
+            label="Título de la receta"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Ej: Empanadas de carne caseras"
+            error={errors.title}
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -263,52 +260,28 @@ const AddRecipePage = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label
-                htmlFor="prepTime"
-                className="block text-sm font-semibold text-stone-800 mb-1"
-              >
-                Tiempo de preparación (minutos)
-              </label>
-              <input
-                id="prepTime"
-                name="prepTime"
-                type="number"
-                min="1"
-                value={prepTime}
-                onChange={(e) => setPrepTime(e.target.value)}
-                className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-              {errors.prepTime && (
-                <p className="mt-1 text-xs font-medium text-red-600">
-                  {errors.prepTime}
-                </p>
-              )}
-            </div>
+            <Input
+              id="prepTime"
+              name="prepTime"
+              type="number"
+              label="Tiempo de preparación (minutos)"
+              value={prepTime}
+              onChange={(e) => setPrepTime(e.target.value)}
+              min="1"
+              error={errors.prepTime}
+            />
 
-            <div>
-              <label
-                htmlFor="servings"
-                className="block text-sm font-semibold text-stone-800 mb-1"
-              >
-                Porciones (1 a 20)
-              </label>
-              <input
-                id="servings"
-                name="servings"
-                type="number"
-                min="1"
-                max="20"
-                value={servings}
-                onChange={(e) => setServings(e.target.value)}
-                className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-              {errors.servings && (
-                <p className="mt-1 text-xs font-medium text-red-600">
-                  {errors.servings}
-                </p>
-              )}
-            </div>
+            <Input
+              id="servings"
+              name="servings"
+              type="number"
+              label="Porciones (1 a 20)"
+              value={servings}
+              onChange={(e) => setServings(e.target.value)}
+              min="1"
+              max="20"
+              error={errors.servings}
+            />
           </div>
 
           <div>
@@ -370,7 +343,9 @@ const AddRecipePage = () => {
               rows="4"
               value={stepsText}
               onChange={(e) => setStepsText(e.target.value)}
-              placeholder={'Prepara el relleno y deja enfriar.\nArma las porciones y fríe hasta dorar.'}
+              placeholder={
+                'Prepara el relleno y deja enfriar.\nArma las porciones y fríe hasta dorar.'
+              }
               className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
             {errors.steps && (
@@ -386,70 +361,36 @@ const AddRecipePage = () => {
             </legend>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label
-                  htmlFor="authorName"
-                  className="block text-sm font-semibold text-stone-800 mb-1"
-                >
-                  Nombre del autor
-                </label>
-                <input
-                  id="authorName"
-                  name="authorName"
-                  type="text"
-                  value={authorName}
-                  onChange={(e) => setAuthorName(e.target.value)}
-                  placeholder="Tu nombre"
-                  className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-                {errors.authorName && (
-                  <p className="mt-1 text-xs font-medium text-red-600">
-                    {errors.authorName}
-                  </p>
-                )}
-              </div>
+              <Input
+                id="authorName"
+                name="authorName"
+                label="Nombre del autor"
+                value={authorName}
+                onChange={(e) => setAuthorName(e.target.value)}
+                placeholder="Tu nombre"
+                error={errors.authorName}
+              />
 
-              <div>
-                <label
-                  htmlFor="authorEmail"
-                  className="block text-sm font-semibold text-stone-800 mb-1"
-                >
-                  Correo electrónico
-                </label>
-                <input
-                  id="authorEmail"
-                  name="authorEmail"
-                  type="email"
-                  value={authorEmail}
-                  onChange={(e) => setAuthorEmail(e.target.value)}
-                  placeholder="autor@ejemplo.com"
-                  className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-                {errors.authorEmail && (
-                  <p className="mt-1 text-xs font-medium text-red-600">
-                    {errors.authorEmail}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="authorBio"
-                className="block text-sm font-semibold text-stone-800 mb-1"
-              >
-                Biografía corta (opcional)
-              </label>
-              <input
-                id="authorBio"
-                name="authorBio"
-                type="text"
-                value={authorBio}
-                onChange={(e) => setAuthorBio(e.target.value)}
-                placeholder="Ej: Cocinero aficionado de recetas tradicionales"
-                className="w-full border border-stone-300 rounded-lg px-3 py-2 text-stone-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              <Input
+                id="authorEmail"
+                name="authorEmail"
+                type="email"
+                label="Correo electrónico"
+                value={authorEmail}
+                onChange={(e) => setAuthorEmail(e.target.value)}
+                placeholder="autor@ejemplo.com"
+                error={errors.authorEmail}
               />
             </div>
+
+            <Input
+              id="authorBio"
+              name="authorBio"
+              label="Biografía corta (opcional)"
+              value={authorBio}
+              onChange={(e) => setAuthorBio(e.target.value)}
+              placeholder="Ej: Cocinero aficionado de recetas tradicionales"
+            />
           </fieldset>
 
           <div className="pt-2 flex items-center justify-end gap-3">

@@ -109,7 +109,7 @@
         "Vierte la salsa de soya con un toque de miel o ajo y reduce hasta glasear.",
         "Sirve sobre arroz junto con el aguacate."
       ],
-      "favorite": true,
+      "favorite": false,
       "createdAt": "2026-11-18T13:00:00.000Z",
       "author": {
         "name": "Diego Castaño",
