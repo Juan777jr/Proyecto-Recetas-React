@@ -1,276 +1,315 @@
 {
   "recipes": [
     {
-      "id": "2",
-      "title": "Caldo de costilla criollo",
+      "id": "1",
+      "title": "Panqueques de avena y banano",
       "category": "Desayuno",
-      "difficulty": "Media",
-      "prepTime": 45,
-      "servings": 4,
-      "description": "Caldo reconfortante de costilla de res con papa criolla, cilantro fresco y cebolla larga.",
+      "difficulty": "Fácil",
+      "prepTime": 20,
+      "servings": 3,
+      "description": "Panqueques esponjosos de avena molida y banano maduro con un toque de canela.",
       "ingredients": [
         {
-          "name": "Costilla de res",
-          "quantity": "600 g"
+          "name": "Hojuelas de avena",
+          "quantity": "1 taza"
         },
         {
-          "name": "Papa criolla",
-          "quantity": "8 unidades"
+          "name": "Banano maduro",
+          "quantity": "2 unidades"
         },
         {
-          "name": "Cebolla larga picada",
-          "quantity": "2 tallos"
+          "name": "Huevo",
+          "quantity": "1 unidad"
         },
         {
-          "name": "Cilantro fresco",
-          "quantity": "Al gusto"
+          "name": "Canela en polvo",
+          "quantity": "1/2 cucharadita"
         }
       ],
       "steps": [
-        "Cocina la costilla en agua con sal y cebolla larga hasta que esté tierna.",
-        "Agrega las papas criollas y cocina hasta que espesen ligeramente el caldo.",
-        "Sirve caliente con abundante cilantro picado."
+        "Tritura los bananos en un tazón y mézclalos con el huevo y la canela.",
+        "Incorpora la avena hasta formar una masa homogénea y deja reposar 5 minutos.",
+        "Cocina porciones en sartén antiadherente a fuego medio hasta que salgan burbujas y dora el otro lado."
       ],
       "favorite": false,
-      "createdAt": "2026-11-16T08:00:00.000Z",
+      "createdAt": "2026-11-15T07:40:00.000Z",
       "author": {
-        "name": "Andrés Mendoza",
-        "bio": "Cocina casera de fin de semana.",
-        "email": "andres.mendoza@example.com"
+        "name": "Camila Restrepo",
+        "bio": "Desayunos rápidos sin azúcar refinada.",
+        "email": "camila.restrepo@example.com"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Huevos rancheros con salsa fresca",
+      "category": "Desayuno",
+      "difficulty": "Media",
+      "prepTime": 25,
+      "servings": 2,
+      "description": "Huevos fritos sobre tortillas tostadas con frijoles refritos y pico de gallo casero.",
+      "ingredients": [
+        {
+          "name": "Huevos",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Tortillas de maíz",
+          "quantity": "4 unidades"
+        },
+        {
+          "name": "Frijoles rojos cocidos",
+          "quantity": "1 taza"
+        },
+        {
+          "name": "Tomate chonto y cebolla cabezona",
+          "quantity": "150 g"
+        }
+      ],
+      "steps": [
+        "Tuesta ligeramente las tortillas y unta una capa de frijoles machacados.",
+        "Pica finamente el tomate y la cebolla con sal y limón para hacer la salsa.",
+        "Fríe los huevos con la yema tierna, colócalos sobre las tortillas y cubre con la salsa."
+      ],
+      "favorite": true,
+      "createdAt": "2026-11-16T08:20:00.000Z",
+      "author": {
+        "name": "Felipe Morales",
+        "bio": "Cocina latinoamericana para empezar la mañana.",
+        "email": "felipe.morales@example.com"
       }
     },
     {
       "id": "3",
-      "title": "Arroz atollado casero",
+      "title": "Lasaña casera de carne y espinaca",
       "category": "Almuerzo",
       "difficulty": "Difícil",
-      "prepTime": 60,
+      "prepTime": 75,
       "servings": 6,
-      "description": "Plato meloso y lleno de sabor con pollo, cerdo, verduras y especias suaves.",
+      "description": "Capas de pasta, carne molida en salsa de tomate, espinaca fresca y queso gratinado.",
       "ingredients": [
         {
-          "name": "Arroz blanco",
-          "quantity": "2 tazas"
+          "name": "Láminas para lasaña",
+          "quantity": "250 g"
         },
         {
-          "name": "Pechuga y pernil de pollo",
+          "name": "Carne de res molida",
           "quantity": "500 g"
         },
         {
-          "name": "Papa pastusa en cubos",
-          "quantity": "2 unidades"
+          "name": "Hojas de espinaca fresca",
+          "quantity": "2 tazas"
         },
         {
-          "name": "Hogao de tomate y cebolla",
-          "quantity": "1 taza"
+          "name": "Queso mozzarella rallado",
+          "quantity": "250 g"
         }
       ],
       "steps": [
-        "Sofríe las carnes con el hogao y condimentos hasta dorar.",
-        "Incorpora el caldo caliente, la papa y el arroz.",
-        "Cocina a fuego medio revolviendo ocasionalmente hasta lograr textura cremosa."
+        "Sofríe la carne con ajo, cebolla y salsa de tomate hasta que espese y agrega la espinaca.",
+        "Arma capas alternando pasta, salsa de carne y queso en una refractaria.",
+        "Hornea a 190 °C durante 30 minutos hasta que el queso esté burbujeante y dorado."
       ],
       "favorite": true,
-      "createdAt": "2026-11-17T12:15:00.000Z",
+      "createdAt": "2026-11-17T12:30:00.000Z",
       "author": {
-        "name": "Valentina Ortiz",
-        "bio": "Rescatando recetas familiares de almuerzo.",
-        "email": "valentina.ortiz@example.com"
+        "name": "Juliana Castro",
+        "bio": "Platos al horno para compartir en familia.",
+        "email": "juliana.castro@example.com"
       }
     },
     {
       "id": "4",
-      "title": "Bowl de pollo teriyaki y arroz",
+      "title": "Pasta al pesto con tomate cherry",
       "category": "Almuerzo",
       "difficulty": "Fácil",
-      "prepTime": 30,
+      "prepTime": 25,
       "servings": 3,
-      "description": "Trozos de pollo glaseados acompañados de arroz jazmín, pepino y aguacate en rodajas.",
+      "description": "Espaguetis al dente envueltos en pesto verde de albahaca con tomates cherry salteados.",
       "ingredients": [
         {
-          "name": "Pechuga de pollo en cubos",
-          "quantity": "400 g"
+          "name": "Espaguetis",
+          "quantity": "300 g"
         },
         {
-          "name": "Arroz cocido",
-          "quantity": "2 tazas"
+          "name": "Hojas de albahaca fresca",
+          "quantity": "1 taza"
         },
         {
-          "name": "Salsa de soya",
-          "quantity": "4 cucharadas"
+          "name": "Tomates cherry",
+          "quantity": "1 taza"
         },
         {
-          "name": "Aguacate maduro",
-          "quantity": "1 unidad"
+          "name": "Queso parmesano rallado",
+          "quantity": "1/2 taza"
         }
       ],
       "steps": [
-        "Dora el pollo en una sartén caliente hasta que esté bien cocido.",
-        "Vierte la salsa de soya con un toque de miel o ajo y reduce hasta glasear.",
-        "Sirve sobre arroz junto con el aguacate."
+        "Cocina la pasta en agua con sal hasta que quede al dente y reserva un poco del agua de cocción.",
+        "Licúa o machaca la albahaca, el queso, un diente de ajo, aceite de oliva y sal para el pesto.",
+        "Mezcla la pasta con el pesto y los tomates cherry partidos a la mitad."
       ],
       "favorite": false,
-      "createdAt": "2026-11-18T13:00:00.000Z",
+      "createdAt": "2026-11-18T13:15:00.000Z",
       "author": {
-        "name": "Diego Castaño",
-        "bio": "Comidas rápidas y equilibradas para el día a día.",
-        "email": "diego.castano@example.com"
+        "name": "Mateo Ospina",
+        "bio": "Recetas rápidas con ingredientes frescos.",
+        "email": "mateo.ospina@example.com"
       }
     },
     {
       "id": "5",
-      "title": "Tacos al pastor en sartén",
+      "title": "Salmón al limón con espárragos",
       "category": "Cena",
       "difficulty": "Media",
-      "prepTime": 40,
-      "servings": 4,
-      "description": "Carne adobada con piña asada, cebolla, cilantro y limón en tortillas de maíz calientes.",
+      "prepTime": 30,
+      "servings": 2,
+      "description": "Filetes de salmón dorados a la sartén con mantequilla de ajo, limón y espárragos tiernos.",
       "ingredients": [
         {
-          "name": "Lomo de cerdo en tiras",
-          "quantity": "500 g"
+          "name": "Filetes de salmón",
+          "quantity": "2 unidades"
         },
         {
-          "name": "Piña fresca en trozos",
-          "quantity": "1 taza"
+          "name": "Espárragos verdes",
+          "quantity": "1 manojo"
         },
         {
-          "name": "Tortillas de maíz",
-          "quantity": "8 unidades"
+          "name": "Mantequilla",
+          "quantity": "2 cucharadas"
         },
         {
-          "name": "Cebolla blanca y cilantro",
-          "quantity": "Al gusto"
+          "name": "Limón amarillo",
+          "quantity": "1 unidad"
         }
       ],
       "steps": [
-        "Marina la carne con especias, ajo y jugo de piña durante 20 minutos.",
-        "Cocina la carne y los trozos de piña en sartén bien caliente.",
-        "Arma los tacos en tortillas calientes y corona con cebolla, cilantro y limón."
+        "Salpimienta los filetes de salmón y recorta la base dura de los espárragos.",
+        "Dora el salmón en sartén con aceite y retíralo cuando esté casi listo.",
+        "Saltea los espárragos con mantequilla, ajo y jugo de limón y sirve junto al salmón."
       ],
       "favorite": false,
-      "createdAt": "2026-11-19T19:20:00.000Z",
+      "createdAt": "2026-11-19T19:00:00.000Z",
       "author": {
-        "name": "Sofía Herrera",
-        "bio": "Cenas informales con mucho sabor.",
-        "email": "sofia.herrera@example.com"
+        "name": "Paola Salazar",
+        "bio": "Cenas ligeras y llenas de sabor.",
+        "email": "paola.salazar@example.com"
       }
     },
     {
       "id": "6",
-      "title": "Crema de calabaza y jengibre",
+      "title": "Omelette de champiñones y queso",
       "category": "Cena",
       "difficulty": "Fácil",
-      "prepTime": 35,
-      "servings": 4,
-      "description": "Crema ligera y aterciopelada de calabaza con un toque aromático de jengibre fresco.",
+      "prepTime": 15,
+      "servings": 2,
+      "description": "Tortilla francesa suave rellena de champiñones salteados y queso fundido.",
       "ingredients": [
         {
-          "name": "Calabaza pelada en cubos",
-          "quantity": "700 g"
+          "name": "Huevos",
+          "quantity": "4 unidades"
         },
         {
-          "name": "Jengibre fresco rallado",
-          "quantity": "1 cucharadita"
+          "name": "Champiñones laminados",
+          "quantity": "150 g"
         },
         {
-          "name": "Caldo de verduras",
-          "quantity": "3 tazas"
+          "name": "Queso doble crema",
+          "quantity": "100 g"
         },
         {
-          "name": "Crema de leche",
-          "quantity": "1/3 taza"
+          "name": "Aceite de oliva",
+          "quantity": "1 cucharada"
         }
       ],
       "steps": [
-        "Hierve la calabaza y el jengibre en el caldo hasta que estén suaves.",
-        "Licúa hasta obtener una crema homogénea.",
-        "Incorpora la crema de leche, ajusta la sal y sirve tibia."
+        "Saltea los champiñones en una sartén hasta que suelten su humedad y doren ligeramente.",
+        "Bate los huevos con una pizca de sal y viértelos en la sartén a fuego suave.",
+        "Añade los champiñones y el queso en el centro, dobla el omelette y sirve caliente."
       ],
       "favorite": true,
-      "createdAt": "2026-11-20T18:45:00.000Z",
+      "createdAt": "2026-11-20T20:10:00.000Z",
       "author": {
-        "name": "Mateo Vargas",
-        "bio": "Recetas ligeras para cerrar la jornada.",
-        "email": "mateo.vargas@example.com"
+        "name": "Daniela Mejía",
+        "bio": "Soluciones rápidas para la cena.",
+        "email": "daniela.mejia@example.com"
       }
     },
     {
       "id": "7",
-      "title": "Brownies húmedos de chocolate",
+      "title": "Torta de zanahoria con especias",
       "category": "Postre",
       "difficulty": "Media",
-      "prepTime": 40,
+      "prepTime": 50,
       "servings": 8,
-      "description": "Cuadros de chocolate intenso con centro suave y corteza ligeramente crocante.",
+      "description": "Bizcocho húmedo de zanahoria rallada, canela y nueces picadas.",
       "ingredients": [
         {
-          "name": "Chocolate semiamargo",
-          "quantity": "200 g"
+          "name": "Zanahoria rallada fina",
+          "quantity": "2 tazas"
         },
         {
-          "name": "Mantequilla sin sal",
-          "quantity": "120 g"
+          "name": "Harina de trigo",
+          "quantity": "1 y 1/2 tazas"
         },
         {
           "name": "Huevos",
           "quantity": "3 unidades"
         },
         {
-          "name": "Harina de trigo",
+          "name": "Nueces picadas",
           "quantity": "1/2 taza"
         }
       ],
       "steps": [
-        "Derrite el chocolate con la mantequilla a baño María y deja entibiar.",
-        "Bate los huevos con azúcar, agrega el chocolate fundido y luego la harina.",
-        "Hornea a 180 °C por unos 25 minutos, deja enfriar y corta en porciones."
+        "Bate los huevos con el azúcar y el aceite hasta integrar bien.",
+        "Incorpora la harina cernida, la canela, la zanahoria rallada y las nueces.",
+        "Vierte en un molde engrasado y hornea a 180 °C por unos 35 minutos."
       ],
-      "favorite": true,
-      "createdAt": "2026-11-21T16:10:00.000Z",
+      "favorite": false,
+      "createdAt": "2026-11-21T16:45:00.000Z",
       "author": {
-        "name": "Natalia Gómez",
-        "bio": "Repostería casera sin complicaciones.",
-        "email": "natalia.gomez@example.com"
+        "name": "Sara Quintero",
+        "bio": "Postres caseros para acompañar el café.",
+        "email": "sara.quintero@example.com"
       }
     },
     {
       "id": "8",
-      "title": "Limonada de hierbabuena y coco",
+      "title": "Batido de mango y maracuyá",
       "category": "Bebida",
       "difficulty": "Fácil",
       "prepTime": 10,
-      "servings": 4,
-      "description": "Bebida refrescante",
+      "servings": 2,
+      "description": "Batido tropical frío",
       "ingredients": [
         {
-          "name": "Jugo de limón natural",
-          "quantity": "1/2 taza"
-        },
-        {
-          "name": "Leche de coco",
+          "name": "Mango maduro en cubos",
           "quantity": "1 taza"
         },
         {
-          "name": "Hojas de hierbabuena",
-          "quantity": "12 hojas"
+          "name": "Pulpa de maracuyá",
+          "quantity": "1/2 taza"
         },
         {
-          "name": "Hielo al gusto",
-          "quantity": "2 tazas"
+          "name": "Agua fría o leche",
+          "quantity": "1 taza"
+        },
+        {
+          "name": "Hielo",
+          "quantity": "1 taza"
         }
       ],
       "steps": [
-        "Licúa brevemente el jugo de limón, la leche de coco y el hielo.",
-        "Agrega las hojas de hierbabuena con un pulso corto para no amargarlas.",
-        "Sirve de inmediato en vasos fríos."
+        "Coloca el mango, la pulpa de maracuyá, el líquido y el hielo en la licuadora.",
+        "Licúa hasta obtener una mezcla suave y refrescante.",
+        "Sirve de inmediato en vasos altos."
       ],
-      "favorite": false,
-      "createdAt": "2026-11-22T15:00:00.000Z",
+      "favorite": true,
+      "createdAt": "2026-11-22T15:30:00.000Z",
       "author": {
-        "name": "Sebastián Rojas",
-        "email": "sebastian.rojas@example.com",
-        "bio": "Bebidas naturales y refrescantes."
+        "name": "Tomás Lozano",
+        "bio": "Jugos y batidos frutales al instante.",
+        "email": "tomas.lozano@example.com"
       }
     }
   ],
