@@ -19,6 +19,7 @@ const RecipeDetailPage = () => {
   const [deleting, setDeleting] = useState(false);
   const [isFavorite, setIsFavorite] = useState(Boolean(recipe.favorite));
   const [togglingFav, setTogglingFav] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const handleToggleFavorite = async () => {
     const nextFavorite = !isFavorite;
@@ -72,6 +73,17 @@ const RecipeDetailPage = () => {
         </div>
 
         <article className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+          {recipe.image && !imgError && (
+            <div className="h-64 sm:h-80 w-full overflow-hidden bg-slate-100">
+              <img
+                src={recipe.image}
+                alt={`Presentación de ${recipe.title}`}
+                onError={() => setImgError(true)}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
+
           <div className="bg-gradient-to-r from-blue-50 via-cyan-50/70 to-white px-6 sm:px-8 py-6 border-b border-slate-200/80">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div className="flex flex-wrap gap-2">

@@ -43,6 +43,7 @@ const EditRecipePage = () => {
   const [difficulty, setDifficulty] = useState(recipe.difficulty || 'Fácil');
   const [prepTime, setPrepTime] = useState(String(recipe.prepTime ?? 20));
   const [servings, setServings] = useState(String(recipe.servings ?? 4));
+  const [image, setImage] = useState(recipe.image || '');
   const [description, setDescription] = useState(recipe.description || '');
   const [ingredientsText, setIngredientsText] = useState(
     formatIngredientsForTextarea(recipe.ingredients)
@@ -146,6 +147,7 @@ const EditRecipePage = () => {
       difficulty,
       prepTime: parsedPrepTime,
       servings: parsedServings,
+      image: image.trim(),
       description: description.trim(),
       ingredients: parsedIngredients,
       steps: parsedSteps,
@@ -326,6 +328,24 @@ const EditRecipePage = () => {
                   </p>
                 )}
               </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="edit-image"
+                className="block text-sm font-semibold text-slate-800 mb-1"
+              >
+                Imagen del plato (opcional: ruta en /images/... o URL)
+              </label>
+              <input
+                id="edit-image"
+                name="image"
+                type="text"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="Ej: /images/panqueques.jpg o https://..."
+                className="w-full border border-slate-300 rounded-xl px-3.5 py-2 text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+              />
             </div>
 
             <div>

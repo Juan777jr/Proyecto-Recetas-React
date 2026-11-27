@@ -41,6 +41,7 @@ const AddRecipePage = () => {
   const [difficulty, setDifficulty] = useState('Fácil');
   const [prepTime, setPrepTime] = useState('20');
   const [servings, setServings] = useState('4');
+  const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [ingredientsText, setIngredientsText] = useState('');
   const [stepsText, setStepsText] = useState('');
@@ -142,6 +143,7 @@ const AddRecipePage = () => {
       difficulty,
       prepTime: parsedPrepTime,
       servings: parsedServings,
+      image: image.trim(),
       description: description.trim(),
       ingredients: parsedIngredients,
       steps: parsedSteps,
@@ -287,6 +289,16 @@ const AddRecipePage = () => {
                 error={errors.servings}
               />
             </div>
+
+            <Input
+              id="image"
+              name="image"
+              type="text"
+              label="Imagen del plato (opcional: ruta en /images/... o URL)"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              placeholder="Ej: /images/panqueques.jpg o https://..."
+            />
 
             <div>
               <label

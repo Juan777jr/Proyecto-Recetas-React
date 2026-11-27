@@ -7,24 +7,13 @@
       "difficulty": "Fácil",
       "prepTime": 20,
       "servings": 3,
+      "image": "/images/panqueques.jpg",
       "description": "Panqueques esponjosos de avena molida y banano maduro con un toque de canela.",
       "ingredients": [
-        {
-          "name": "Hojuelas de avena",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Banano maduro",
-          "quantity": "2 unidades"
-        },
-        {
-          "name": "Huevo",
-          "quantity": "1 unidad"
-        },
-        {
-          "name": "Canela en polvo",
-          "quantity": "1/2 cucharadita"
-        }
+        { "name": "Hojuelas de avena", "quantity": "1 taza" },
+        { "name": "Banano maduro", "quantity": "2 unidades" },
+        { "name": "Huevo", "quantity": "1 unidad" },
+        { "name": "Canela en polvo", "quantity": "1/2 cucharadita" }
       ],
       "steps": [
         "Tritura los bananos en un tazón y mézclalos con el huevo y la canela.",
@@ -46,24 +35,13 @@
       "difficulty": "Media",
       "prepTime": 25,
       "servings": 2,
+      "image": "/images/huevos-rancheros.jpg",
       "description": "Huevos fritos sobre tortillas tostadas con frijoles refritos y pico de gallo casero.",
       "ingredients": [
-        {
-          "name": "Huevos",
-          "quantity": "4 unidades"
-        },
-        {
-          "name": "Tortillas de maíz",
-          "quantity": "4 unidades"
-        },
-        {
-          "name": "Frijoles rojos cocidos",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Tomate chonto y cebolla cabezona",
-          "quantity": "150 g"
-        }
+        { "name": "Huevos", "quantity": "4 unidades" },
+        { "name": "Tortillas de maíz", "quantity": "4 unidades" },
+        { "name": "Frijoles rojos cocidos", "quantity": "1 taza" },
+        { "name": "Tomate chonto y cebolla cabezona", "quantity": "150 g" }
       ],
       "steps": [
         "Tuesta ligeramente las tortillas y unta una capa de frijoles machacados.",
@@ -85,24 +63,13 @@
       "difficulty": "Difícil",
       "prepTime": 75,
       "servings": 6,
+      "image": "/images/lasana.jpg",
       "description": "Capas de pasta, carne molida en salsa de tomate, espinaca fresca y queso gratinado.",
       "ingredients": [
-        {
-          "name": "Láminas para lasaña",
-          "quantity": "250 g"
-        },
-        {
-          "name": "Carne de res molida",
-          "quantity": "500 g"
-        },
-        {
-          "name": "Hojas de espinaca fresca",
-          "quantity": "2 tazas"
-        },
-        {
-          "name": "Queso mozzarella rallado",
-          "quantity": "250 g"
-        }
+        { "name": "Láminas para lasaña", "quantity": "250 g" },
+        { "name": "Carne de res molida", "quantity": "500 g" },
+        { "name": "Hojas de espinaca fresca", "quantity": "2 tazas" },
+        { "name": "Queso mozzarella rallado", "quantity": "250 g" }
       ],
       "steps": [
         "Sofríe la carne con ajo, cebolla y salsa de tomate hasta que espese y agrega la espinaca.",
@@ -124,24 +91,13 @@
       "difficulty": "Fácil",
       "prepTime": 25,
       "servings": 3,
+      "image": "/images/pasta-pesto.jpg",
       "description": "Espaguetis al dente envueltos en pesto verde de albahaca con tomates cherry salteados.",
       "ingredients": [
-        {
-          "name": "Espaguetis",
-          "quantity": "300 g"
-        },
-        {
-          "name": "Hojas de albahaca fresca",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Tomates cherry",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Queso parmesano rallado",
-          "quantity": "1/2 taza"
-        }
+        { "name": "Espaguetis", "quantity": "300 g" },
+        { "name": "Hojas de albahaca fresca", "quantity": "1 taza" },
+        { "name": "Tomates cherry", "quantity": "1 taza" },
+        { "name": "Queso parmesano rallado", "quantity": "1/2 taza" }
       ],
       "steps": [
         "Cocina la pasta en agua con sal hasta que quede al dente y reserva un poco del agua de cocción.",
@@ -163,24 +119,13 @@
       "difficulty": "Media",
       "prepTime": 30,
       "servings": 2,
+      "image": "/images/salmon.jpg",
       "description": "Filetes de salmón dorados a la sartén con mantequilla de ajo, limón y espárragos tiernos.",
       "ingredients": [
-        {
-          "name": "Filetes de salmón",
-          "quantity": "2 unidades"
-        },
-        {
-          "name": "Espárragos verdes",
-          "quantity": "1 manojo"
-        },
-        {
-          "name": "Mantequilla",
-          "quantity": "2 cucharadas"
-        },
-        {
-          "name": "Limón amarillo",
-          "quantity": "1 unidad"
-        }
+        { "name": "Filetes de salmón", "quantity": "2 unidades" },
+        { "name": "Espárragos verdes", "quantity": "1 manojo" },
+        { "name": "Mantequilla", "quantity": "2 cucharadas" },
+        { "name": "Limón amarillo", "quantity": "1 unidad" }
       ],
       "steps": [
         "Salpimienta los filetes de salmón y recorta la base dura de los espárragos.",
@@ -202,24 +147,13 @@
       "difficulty": "Fácil",
       "prepTime": 15,
       "servings": 2,
+      "image": "/images/omelette.jpg",
       "description": "Tortilla francesa suave rellena de champiñones salteados y queso fundido.",
       "ingredients": [
-        {
-          "name": "Huevos",
-          "quantity": "4 unidades"
-        },
-        {
-          "name": "Champiñones laminados",
-          "quantity": "150 g"
-        },
-        {
-          "name": "Queso doble crema",
-          "quantity": "100 g"
-        },
-        {
-          "name": "Aceite de oliva",
-          "quantity": "1 cucharada"
-        }
+        { "name": "Huevos", "quantity": "4 unidades" },
+        { "name": "Champiñones laminados", "quantity": "150 g" },
+        { "name": "Queso doble crema", "quantity": "100 g" },
+        { "name": "Aceite de oliva", "quantity": "1 cucharada" }
       ],
       "steps": [
         "Saltea los champiñones en una sartén hasta que suelten su humedad y doren ligeramente.",
@@ -241,24 +175,13 @@
       "difficulty": "Media",
       "prepTime": 50,
       "servings": 8,
+      "image": "/images/torta-zanahoria.jpg",
       "description": "Bizcocho húmedo de zanahoria rallada, canela y nueces picadas.",
       "ingredients": [
-        {
-          "name": "Zanahoria rallada fina",
-          "quantity": "2 tazas"
-        },
-        {
-          "name": "Harina de trigo",
-          "quantity": "1 y 1/2 tazas"
-        },
-        {
-          "name": "Huevos",
-          "quantity": "3 unidades"
-        },
-        {
-          "name": "Nueces picadas",
-          "quantity": "1/2 taza"
-        }
+        { "name": "Zanahoria rallada fina", "quantity": "2 tazas" },
+        { "name": "Harina de trigo", "quantity": "1 y 1/2 tazas" },
+        { "name": "Huevos", "quantity": "3 unidades" },
+        { "name": "Nueces picadas", "quantity": "1/2 taza" }
       ],
       "steps": [
         "Bate los huevos con el azúcar y el aceite hasta integrar bien.",
@@ -280,24 +203,13 @@
       "difficulty": "Fácil",
       "prepTime": 10,
       "servings": 2,
+      "image": "/images/batido-mango.jpg",
       "description": "Batido tropical frío",
       "ingredients": [
-        {
-          "name": "Mango maduro en cubos",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Pulpa de maracuyá",
-          "quantity": "1/2 taza"
-        },
-        {
-          "name": "Agua fría o leche",
-          "quantity": "1 taza"
-        },
-        {
-          "name": "Hielo",
-          "quantity": "1 taza"
-        }
+        { "name": "Mango maduro en cubos", "quantity": "1 taza" },
+        { "name": "Pulpa de maracuyá", "quantity": "1/2 taza" },
+        { "name": "Agua fría o leche", "quantity": "1 taza" },
+        { "name": "Hielo", "quantity": "1 taza" }
       ],
       "steps": [
         "Coloca el mango, la pulpa de maracuyá, el líquido y el hielo en la licuadora.",

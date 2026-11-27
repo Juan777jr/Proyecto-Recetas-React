@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { toast } from 'react-toastify';
-import { FaArrowRight, FaClock, FaHeart, FaRegHeart, FaUsers } from 'react-icons/fa';
+import { FaArrowRight, FaClock, FaHeart, FaRegHeart, FaUsers, FaUtensils } from 'react-icons/fa';
 import { toggleFavoriteRecipe } from '../services/recipesApi';
 
 const DESCRIPTION_LIMIT = 110;
@@ -9,6 +9,7 @@ const DESCRIPTION_LIMIT = 110;
 const RecipeCard = ({ recipe, onToggleFavorite }) => {
   const [expanded, setExpanded] = useState(false);
   const [togglingFav, setTogglingFav] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const isLong = recipe.description.length > DESCRIPTION_LIMIT;
   const displayDescription =
@@ -40,12 +41,25 @@ const RecipeCard = ({ recipe, onToggleFavorite }) => {
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-lg border border-slate-200 hover:border-blue-400 flex flex-col justify-between transition-all">
       <div>
-        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-5 py-3 border-b border-slate-100 flex items-center justify-between gap-2">
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="bg-blue-600 text-white text-[11px] font-semibold px-2.5 py-0.5 rounded-md">
+        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100">
+          {recipe.image && !imgError ? (
+            <img
+              src={recipe.image}
+              alt={`Plato de ${recipe.title}`}
+              onError={() => setImgError(true)}
+              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center text-blue-600/40">
+              <FaUtensils className="text-4xl" aria-hidden="true" />
+            </div>
+          )}
+
+          <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+            <span className="bg-blue-600/95 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-xs">
               {recipe.category}
             </span>
-            <span className="bg-sky-50 text-sky-700 border border-sky-200 text-[11px] font-medium px-2.5 py-0.5 rounded-md">
+            <span className="bg-white/95 backdrop-blur-xs text-slate-800 text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-xs">
               {recipe.difficulty}
             </span>
           </div>
@@ -60,12 +74,12 @@ const RecipeCard = ({ recipe, onToggleFavorite }) => {
                 : `Marcar ${recipe.title} como favorita`
             }
             aria-pressed={Boolean(recipe.favorite)}
-            className="p-1.5 rounded-lg bg-white border border-slate-200 hover:border-rose-300 hover:bg-rose-50 text-rose-600 transition cursor-pointer shrink-0 disabled:opacity-50"
+            className="absolute top-3 right-3 p-2 rounded-full bg-white/95 backdrop-blur-xs shadow-xs hover:bg-rose-50 text-rose-600 transition cursor-pointer disabled:opacity-50"
           >
             {recipe.favorite ? (
               <FaHeart className="text-sm" aria-hidden="true" />
             ) : (
-              <FaRegHeart className="text-sm text-slate-400" aria-hidden="true" />
+              <FaRegHeart className="text-sm text-slate-500" aria-hidden="true" />
             )}
           </button>
         </div>
